@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Block access to admin paths
+Disallow: /admin/
+Disallow: /admin/*
+
+# Block access to API paths
+Disallow: /api/
+Disallow: /api/*
+
+# Allow crawling of static assets
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Add a small crawl delay to prevent overwhelming the server
+Crawl-delay: 10
