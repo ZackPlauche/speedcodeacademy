@@ -1,7 +1,15 @@
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  document.body.classList.add('page-loaded')
+})
+</script>
+
 <template>
   <div class="min-h-screen text-white bg-navy">
     <!-- Header -->
-    <header>
+    <header class="animate-fade-in">
       <!-- Navbar -->
       <div class="container mx-auto px-4 flex items-center justify-between">
         <!-- Logo -->
@@ -91,20 +99,21 @@
         }" />
       </ClientOnly>
       <div class="container mx-auto px-10">
-        <hgroup>
+        <hgroup class="animate-slide-up">
           <h1 class="text-6xl font-normal max-w-4xl leading-tight">
             <span class="font-light">Simple</span> and <span class="font-bold italic">Effective</span> Software Trainings
           </h1>
-          <p class="text-3xl font-normal block mt-4">To help people learn to build quality software as FAST as possible.
+          <p class="text-3xl font-normal block mt-4 animate-fade-in opacity-0" style="animation-delay: 400ms">
+            To help people learn to build quality software as FAST as possible.
           </p>
         </hgroup>
-        <div class="mt-8">
+        <div class="mt-8 animate-fade-in opacity-0" style="animation-delay: 800ms">
           <button class="bg-gradient-to-t from-gradient-orange-dark to-[#e8dd69] px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity duration-200">
             Get Started
           </button>
         </div>
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce animate-fade-in opacity-0" style="animation-delay: 1200ms">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
@@ -112,7 +121,7 @@
       </div>
     </section>
     <!-- Services Section -->
-    <section id="services" class="py-16 scroll-mt-28">
+    <section id="services" class="py-16 scroll-mt-28 reveal-on-scroll">
       <h2 class="text-6xl font-bold text-center">
         What we offer
       </h2>
@@ -140,7 +149,7 @@
       </div>
     </section>
     <!-- About Us Section -->
-    <section id="about" class="py-16 bg-white/5 scroll-mt-28">
+    <section id="about" class="py-16 bg-white/5 scroll-mt-28 reveal-on-scroll">
       <div class="container mx-auto px-10">
         <h2 class="text-6xl font-bold text-center mb-12">
           About Us
@@ -181,3 +190,72 @@
     </footer>
   </div>
 </template>
+
+<style>
+/* Base animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Reveal on scroll */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial state */
+.page-loaded .opacity-0 {
+  opacity: 0;
+}
+</style>
+
+<script>
+// Add this to handle reveal on scroll
+if (import.meta.client) {
+  const observerOptions = {
+    threshold: 0.1
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed')
+      }
+    })
+  }, observerOptions)
+
+  // Observe all elements with reveal-on-scroll class
+  setTimeout(() => {
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+      observer.observe(el)
+    })
+  }, 100)
+}
+</script>
