@@ -38,70 +38,73 @@ onMounted(() => {
     <!-- Hero Section -->
     <section class="min-h-[calc(100vh-7rem)] flex items-center relative">
       <ClientOnly>
-        <NuxtParticles class="absolute inset-0 -z-10" :options="{
-          particles: {
-            color: {
-              value: '#ffffff'
-            },
-            opacity: {
-              value: 0.3
-            },
-            number: {
-              value: 100,
-              density: {
-                enable: true,
-                value_area: 800
-              }
-            },
-            size: {
-              value: 2
-            },
-            move: {
-              enable: true,
-              speed: 0.8,
-              direction: 'none',
-              random: true,
-              straight: false,
-              out_mode: 'out',
-              bounce: false,
-            },
-            links: {
-              enable: true,
-              distance: 150,
-              color: '#ffffff',
-              opacity: 0.1,
-              width: 1
-            },
-            interactivity: {
-              detect_on: 'canvas',
-              events: {
-                onhover: {
-                  enable: true,
-                  mode: 'repulse'
-                },
-                onclick: {
-                  enable: true,
-                  mode: 'push'
-                },
-                resize: true
+        <NuxtParticles
+          class="absolute inset-0 -z-10"
+          :options="{
+            particles: {
+              color: {
+                value: '#ffffff'
               },
-              modes: {
-                repulse: {
-                  distance: 100,
-                  duration: 0.4
+              opacity: {
+                value: 0.3
+              },
+              number: {
+                value: 100,
+                density: {
+                  enable: true,
+                  value_area: 800
+                }
+              },
+              size: {
+                value: 2
+              },
+              move: {
+                enable: true,
+                speed: 0.8,
+                direction: 'none',
+                random: true,
+                straight: false,
+                out_mode: 'out',
+                bounce: false,
+              },
+              links: {
+                enable: true,
+                distance: 150,
+                color: '#ffffff',
+                opacity: 0.1,
+                width: 1
+              },
+              interactivity: {
+                detect_on: 'canvas',
+                events: {
+                  onhover: {
+                    enable: true,
+                    mode: 'repulse'
+                  },
+                  onclick: {
+                    enable: true,
+                    mode: 'push'
+                  },
+                  resize: true
                 },
-                push: {
-                  particles_nb: 4
+                modes: {
+                  repulse: {
+                    distance: 100,
+                    duration: 0.4
+                  },
+                  push: {
+                    particles_nb: 4
+                  }
                 }
               }
             }
-          }
-        }" />
+          }"
+        />
       </ClientOnly>
       <div class="container mx-auto px-10">
         <hgroup class="animate-slide-up">
-          <h1 class="text-6xl font-normal max-w-4xl leading-tight">
-            <span class="font-light">Simple</span> and <span class="font-bold italic">Effective</span> Software Trainings
+          <h1 class="text-6xl font-bold max-w-4xl leading-tight">
+            Simple and Effective Software Training
           </h1>
           <p class="text-3xl font-normal block mt-4 animate-fade-in opacity-0" style="animation-delay: 400ms">
             To help people learn to build quality software as FAST as possible.
@@ -113,10 +116,12 @@ onMounted(() => {
           </button>
         </div>
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce animate-fade-in opacity-0" style="animation-delay: 1200ms">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style="animation-delay: 1200ms">
+          <div class="animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
         </div>
       </div>
     </section>
