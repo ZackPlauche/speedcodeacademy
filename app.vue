@@ -198,7 +198,7 @@ onMounted(() => {
                 state of software education – too many tutorials filled with unnecessary fluff that didn't actually improve my coding skills.
               </p>
               <p>
-                My mission is simple: help people spend less time watching tutorials and more time actually building software. 
+                Our mission is simple: help people spend less time watching tutorials and more time actually building software. 
                 I believe the fastest way to become a better developer is through hands-on experience, not endless video courses.
               </p>
               <p>
