@@ -17,21 +17,45 @@ onMounted(() => {
           <img src="/logos/logo-edited-solid-background-cropped.png" alt="Logo" class="w-full h-full" />
         </NuxtLink>
 
-        <!-- Navigation Links -->
-        <nav class="flex gap-8 items-center">
-          <a 
-            href="#services" 
-            class="text-lg text-white/80 hover:text-white transition-colors duration-200"
-          >
-            Services
-          </a>
-          <a 
-            href="#about" 
-            class="text-lg text-white/80 hover:text-white transition-colors duration-200"
-          >
-            About
-          </a>
-        </nav>
+        <!-- Navigation Links and Social Icons -->
+        <div class="flex items-center gap-8">
+          <nav class="flex gap-8 items-center">
+            <a 
+              href="#services" 
+              class="text-lg text-white/80 hover:text-white transition-colors duration-200"
+            >
+              Services
+            </a>
+            <a 
+              href="#about" 
+              class="text-lg text-white/80 hover:text-white transition-colors duration-200"
+            >
+              About
+            </a>
+          </nav>
+          
+          <!-- Social Icons -->
+          <div class="flex gap-4 border-l border-white/10 pl-8">
+            <a 
+              href="https://www.instagram.com/speedcodeacademy/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white/80 hover:text-white transition-colors duration-200"
+              title="Follow us on Instagram"
+            >
+              <Icon name="mdi:instagram" class="w-6 h-6" />
+            </a>
+            <a 
+              href="https://www.youtube.com/@speedcodeacademyofficial" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white/80 hover:text-white transition-colors duration-200"
+              title="Subscribe to our YouTube channel"
+            >
+              <Icon name="mdi:youtube" class="w-6 h-6" />
+            </a>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -189,8 +213,28 @@ onMounted(() => {
     </section>
     <!-- Footer -->
     <footer class="py-8 border-t border-white/10">
-      <div class="container mx-auto px-4 text-center text-white/60">
-        <p>&copy; {{ new Date().getFullYear() }} Speed Code Academy. All rights reserved.</p>
+      <div class="container mx-auto px-4 text-center">
+        <div class="flex justify-center gap-6 mb-4">
+          <a 
+            href="https://www.instagram.com/speedcodeacademy/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white/60 hover:text-white transition-colors duration-200"
+            title="Follow us on Instagram"
+          >
+            <Icon name="mdi:instagram" class="w-6 h-6" />
+          </a>
+          <a 
+            href="https://www.youtube.com/@speedcodeacademyofficial" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white/60 hover:text-white transition-colors duration-200"
+            title="Subscribe to our YouTube channel"
+          >
+            <Icon name="mdi:youtube" class="w-6 h-6" />
+          </a>
+        </div>
+        <p class="text-white/60">&copy; {{ new Date().getFullYear() }} Speed Code Academy. All rights reserved.</p>
       </div>
     </footer>
   </div>
