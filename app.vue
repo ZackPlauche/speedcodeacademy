@@ -4,6 +4,16 @@ import { onMounted } from 'vue'
 onMounted(() => {
   document.body.classList.add('page-loaded')
 })
+
+useHead({
+  title: 'Speed Code Academy | Simple and Effective Software Training',
+  meta: [
+    {
+      name: 'description',
+      content: 'Speed Code Academy is a company that aims to help people learn to build quality software as FAST as possible.'
+    }
+  ]
+})
 </script>
 
 <template>
